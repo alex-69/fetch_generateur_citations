@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width">
+
+    <title>genérateur de citations</title>
+
+    <link rel="stylesheet" href="style.css">
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <p> </p>
+      
+   <div>
+        <button> Generer des citations aléatoires</button>
+      </div>
+
+  </body>
+  <script>
+    const citation  = document.querySelector('p');
+    const BoutonGenerer  = document.querySelector('button');
+
+    BoutonGenerer.addEventListener('click', result);
+
+function result(){
+    fetch('citations.json')
+    .then(function(response) {
+      if (!response.ok) {
+        throw new Error("HTTP error, status = " + response.status);
+      }
+      return response.json();
+    })
+    .then(function(json) {
+       var x = Math.floor(Math.random()*json.citations.length);
+       var y = Math.floor(Math.random()*json.citations1.length);
+       var z = Math.floor(Math.random()*json.citations2.length);
+       
+        citation.innerHTML = json.citations[x].phrase + " - " + json.citations1[y].phrase + " - " + json.citations2[z].phrase ;
+        
+      
+    })
+    .catch(function(error) {
+      var p = document.createElement('p');
+      p.appendChild(
+        document.createTextNode('Error: ' + error.message)
+      );
+      document.body.insertBefore(p, citation);
+    });
+}
+  </script>
+</html>
