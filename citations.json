@@ -1,0 +1,22 @@
+{ 
+  
+  "citations" : [
+    { "phrase": "Luke, je suis ton père."},
+    { "phrase": "Si tu n'es pas avec moi, alors tu es contre moi"},
+    { "phrase": "Je suis un Jedi"}
+  ],
+
+  "citations1" : [
+    { "phrase": "comme mon père l'a été avant moi"},
+    { "phrase": "plutôt embrasser un Wookie"},
+    { "phrase": "missa accepté...avec Maximax d'humilité"}
+  ],
+
+  "citations2" : [
+    { "phrase": "ne m'oblige pas à te tuer"},
+    { "phrase": "allez Chico on met la gomme"},
+    { "phrase": "que la Force soit avec toi"}
+  ]
+
+}
+
